@@ -1,0 +1,15 @@
+# Tower of Hanoi using Recursion
+def tower_of_hanoi(n, source, aux, target):
+    if n == 1:
+        print(f"Move disk 1 from {source} -> {target}")
+        return
+    # Move n-1 disks from source to aux
+    tower_of_hanoi(n-1, source, target, aux)
+    print(f"Move disk {n} from {source} -> {target}")
+    # Move n-1 disks from aux to target
+    tower_of_hanoi(n-1, aux, source, target)
+
+# Example with 3 disks
+n = 3
+print("Tower of Hanoi steps for", n, "disks:")
+tower_of_hanoi(n, 'A', 'B', 'C')
